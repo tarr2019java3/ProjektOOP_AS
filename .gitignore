@@ -1,0 +1,6 @@
+.idea
+*.iml
+test
+target
+*.json
+*.pdf
