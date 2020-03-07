@@ -4,23 +4,22 @@ public class Worker {
     private String name;
     private String surname;
     private Sex sex;
-    private Department depId;
+    private Department dep;
     private double salary;
     private int age;
     private int childNum;
     private boolean married;
     private int workerId;
 
-    public Worker(String name, String surname, Sex sex, Department depId, double salary, int age, int childNum, boolean married) {
+    public Worker(String name, String surname, Sex sex, Department dep, double salary, int age, int childNum, boolean married) {
         this.name = name;
         this.surname = surname;
         this.sex = sex;
-        this.depId = depId;
+        this.dep = dep;
         this.salary = salary;
         this.age = age;
         this.childNum = childNum;
         this.married = married;
-        workerId = depId + getWorkersNum();
     }
 
     // gettery , settery
@@ -28,12 +27,24 @@ public class Worker {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Sex getSex() {
         return sex;
     }
 
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
     public int getAge() {
         return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getSurname() {
@@ -44,12 +55,12 @@ public class Worker {
         this.surname = surname;
     }
 
-    public Department getDepId() {
-        return depId;
+    public Department getDep() {
+        return dep;
     }
 
-    public void setDepId(Department depId) {
-        this.depId = depId;
+    public void setDep(Department dep) {
+        this.dep = dep;
     }
 
     public double getSalary() {
@@ -75,26 +86,33 @@ public class Worker {
     public void setMarried(boolean married) {
         this.married = married;
     }
-    public void setAge(int age) {
-        this.age = age;
-    }
-    // ^^^ gettery , settery ^^^
 
+    public int getWorkerId() {
+        return workerId;
+    }
 
-    public void showAll(){
+    public void setWorkerId(int workerId) {
+        this.workerId = workerId;
+    }
+
+    public void showAll() {
 
     }
-    public void showShort(){
+
+    public void showShort() {
 
     }
-    public void showSpecial(){
-        
+
+    public void showSpecial() {
+
     }
-    public boolean compareSalary(double value){
+
+    public boolean compareSalary(double value) {
         return false;
     }
-    public void calcIncrease(double incPercent){
-        
+
+    public void calcIncrease(double incPercent) {
+
     }
 }
 

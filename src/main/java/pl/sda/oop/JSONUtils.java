@@ -9,10 +9,26 @@ import java.util.List;
 public class JSONUtils {
 
 
-    public void writeList(String filename, List<Worker> workers){
+    public void writeWorkerList(String filename, List<Worker> workers){
         ObjectMapper mapper = new ObjectMapper();
         try {
             mapper.writeValue(new File(filename), workers);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeDepartmentList(String filename, List<Department> departments){
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.writeValue(new File(filename), departments);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeCompanyList(String filename, List<Company> companies){
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.writeValue(new File(filename), companies);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -3,12 +3,14 @@ package pl.sda.oop;
 public class Department {
     private int depId;
     private String depName;
-    private int workersNum;
+    private int workersDepNum;
+    private Company company;
 
-    public Department(int depId, String depName) {
+    public Department(int depId, String depName, Company company) {
         this.depId = depId;
         this.depName = depName;
-        this.workersNum = 0;
+        this.workersDepNum = 0;
+        this.company = company;
     }
 
     public int getDepId() {
@@ -27,10 +29,11 @@ public class Department {
         this.depName = depName;
     }
 
-    public int getWorkersNum() {
-        return workersNum;
+    public void setWorkersDepNum(int workersDepNum) {
+        this.workersDepNum = workersDepNum;
     }
-    public void addWorker(String name, String surname, Sex sex, Department depId, double salary, int age, int childNum, boolean married){
 
+    public int getWorkersDepNum() {
+        return workersDepNum;
     }
 }
