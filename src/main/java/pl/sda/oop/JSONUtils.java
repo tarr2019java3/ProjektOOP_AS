@@ -4,12 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JSONUtils {
 
 
-    public void writeWorkerList(String filename, List<Worker> workers){
+    public static void writeWorkerList(String filename, List<Worker> workers){
         ObjectMapper mapper = new ObjectMapper();
         try {
             mapper.writeValue(new File(filename), workers);
@@ -17,29 +18,18 @@ public class JSONUtils {
             e.printStackTrace();
         }
     }
-    public void writeDepartmentList(String filename, List<Department> departments){
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            mapper.writeValue(new File(filename), departments);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void writeCompanyList(String filename, List<Company> companies){
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            mapper.writeValue(new File(filename), companies);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void readList(String filename){
+    public static void printShortWorkerList(String filename){
         File file = new File(filename);
         ObjectMapper mapper = new ObjectMapper();
 
         try {
             Worker workers[] = mapper.readValue(file, Worker[].class);
+            String a, b, c;
             for (int x = 0; x< workers.length; x++){
+                a = String.format("%-15s", workers[x].getName());
+                b = String.format("%-15s", workers[x].getSurname());
+                c = String.format("%2d", workers[x].getAge());
+                System.out.println(a+b+c);
 
             }
         } catch (IOException e) {
@@ -48,6 +38,25 @@ public class JSONUtils {
             e.printStackTrace();
         }
 
-    }
 
+    }
+    public static List<Worker> readWorkerList(String filename) {
+        File file = new File(filename);
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            List<Worker> workers = new ArrayList<>();
+            Worker[] workersTable = mapper.readValue(file, Worker[].class);
+            for (Worker it:workersTable){
+                workers.add(it);
+            }
+
+            return workers;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

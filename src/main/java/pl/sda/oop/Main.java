@@ -1,16 +1,46 @@
 package pl.sda.oop;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        Company com = new Company("myCompany");
-        com.addDepartment("HR");
-        com.addWorker("Adam", "Stępień", Sex.M,com.getDepartments().get(0), 3500, 26, 0, false);
-        com.workerExportJSON();
-        com.companyExportJSON();
+        WorkerList wl = new WorkerList();
+
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.addWorker("Adam","Stepień", Sex.M,Dep.HR,3500.00,26, 0, false);
+        wl.exportJSON();
+        WorkerPrint wp = new WorkerPrint();
+        wp.setFilename("workerList.json");
+       // wp.printAllWorkersTable();
+        wp.printFullTitle();
+        wp.printAllWorker(12);
+
+
     }
 }

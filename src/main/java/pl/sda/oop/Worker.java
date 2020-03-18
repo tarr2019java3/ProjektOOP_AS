@@ -4,14 +4,17 @@ public class Worker {
     private String name;
     private String surname;
     private Sex sex;
-    private Department dep;
+    private Dep dep;
     private double salary;
     private int age;
     private int childNum;
     private boolean married;
     private int workerId;
 
-    public Worker(String name, String surname, Sex sex, Department dep, double salary, int age, int childNum, boolean married) {
+    public Worker() {
+    }
+
+    public Worker(String name, String surname, Sex sex, Dep dep, double salary, int age, int childNum, boolean married, int workerId) {
         this.name = name;
         this.surname = surname;
         this.sex = sex;
@@ -20,6 +23,7 @@ public class Worker {
         this.age = age;
         this.childNum = childNum;
         this.married = married;
+        this.workerId = workerId;
     }
 
     // gettery , settery
@@ -55,11 +59,11 @@ public class Worker {
         this.surname = surname;
     }
 
-    public Department getDep() {
+    public Dep getDep() {
         return dep;
     }
 
-    public void setDep(Department dep) {
+    public void setDep(Dep dep) {
         this.dep = dep;
     }
 
@@ -95,24 +99,5 @@ public class Worker {
         this.workerId = workerId;
     }
 
-    public void showAll() {
-
-    }
-
-    public void showShort() {
-
-    }
-
-    public void showSpecial() {
-
-    }
-
-    public boolean compareSalary(double value) {
-        return false;
-    }
-
-    public void calcIncrease(double incPercent) {
-
-    }
 }
 
