@@ -1,8 +1,15 @@
 package pl.sda.oop;
 
+import java.util.List;
+
 public class WorkerPrint {
     Worker[] workerTable;
     String filename;
+    List<Worker> workers;
+
+    public void setWorkers(List<Worker> workers) {
+        this.workers = workers;
+    }
 
     public Worker[] getWorkerTable() {
         return workerTable;
@@ -38,11 +45,16 @@ public class WorkerPrint {
     }
 
     public void printAllWorkersTable() {
-        printFullTitle();
-        for (Worker it : workerTable) {
-            printAllWorker(it);
+        if (workers.isEmpty()) {
+            System.out.println("Lista jest pusta!");
+        } else {
+            printFullTitle();
+            for (int x = 0; x < workers.size(); x++) {
 
+                printAllWorker(x);
+            }
         }
+
     }
 
     public void printShortTitle() {
@@ -57,10 +69,19 @@ public class WorkerPrint {
     }
 
     public void printShortWorkersTable() {
-        printShortTitle();
-        for (Worker it : workerTable) {
-            printShortWorker(it);
+        if (workers.isEmpty()) {
+            System.out.println("Lista jest pusta!");
+        } else {
+            printShortTitle();
+            try {
+                for (int x = 0; x < workers.size(); x++) {
+                    printShortWorker(x);
+                }
+            } catch (NullPointerException e) {
+                System.out.println("Lista pracowników jest pusta!");
+            }
         }
+
     }
 
     public void printSpecialTitle() {
@@ -74,15 +95,23 @@ public class WorkerPrint {
     }
 
     public void printSpecialWorkersTable() {
-        printSpecialTitle();
-        for (Worker it : workerTable) {
-            printSpecialWorker(it);
+        if (workers.isEmpty()) {
+            System.out.println("Lista jest pusta!");
+        } else {
+            printSpecialTitle();
+            try {
+                for (int x = 0; x < workers.size(); x++) {
+                    printSpecialWorker(x);
+                }
+            } catch (NullPointerException e) {
+                System.out.println("Lista pracowników jest pusta!");
+            }
         }
     }
 
     public void printAllWorker(int id) {
-        if (id < workerTable.length && id > 0) {
-            Worker it = workerTable[id];
+        if (id < workers.size() && id >= 0) {
+            Worker it = workers.get(id);
             String a, b, c, d, e, f, g, h, i;
             String result = "";
             a = String.format("%-3d", it.getWorkerId());
@@ -120,8 +149,9 @@ public class WorkerPrint {
     }
 
     public void printShortWorker(int id) {
-        if (id < workerTable.length && id > 0) {
-            Worker it = workerTable[id];
+
+        if (id < workers.size() && id >= 0) {
+            Worker it = workers.get(id);
             String b, c, g;
             String result = "";
             b = String.format("%-17s", it.getName());
@@ -145,8 +175,8 @@ public class WorkerPrint {
     }
 
     public void printSpecialWorker(int id) {
-        if (id < workerTable.length && id > 0) {
-            Worker it = workerTable[id];
+        if (id < workers.size() && id >= 0) {
+            Worker it = workers.get(id);
             String b, c;
             String result = "";
             b = String.format("%-17s", it.getName().toUpperCase());

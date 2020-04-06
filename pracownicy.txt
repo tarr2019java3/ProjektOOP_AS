@@ -1,0 +1,4 @@
+ID IMIĘ             NAZWISKO           PŁEĆ  WIEK        WYDZIAŁ    PENSJA BRUTTO DZIECI  ŻONATY
+0  Adam             Stępień               M    46             HR          6900,00      0   false
+1  dominika         cieślarczyk           K    22      Marketing          4500,00      0   false
+2  Daisy            Dog                   K  2422     Production          2500,00     15   false

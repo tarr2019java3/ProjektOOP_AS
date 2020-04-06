@@ -26,6 +26,17 @@ public class Worker {
         this.workerId = workerId;
     }
 
+    public Worker(String name, String surname, Sex sex, Dep dep, double salary, int age, int childNum, boolean married) {
+        this.name = name;
+        this.surname = surname;
+        this.sex = sex;
+        this.dep = dep;
+        this.salary = salary;
+        this.age = age;
+        this.childNum = childNum;
+        this.married = married;
+    }
+
     // gettery , settery
     public String getName() {
         return name;

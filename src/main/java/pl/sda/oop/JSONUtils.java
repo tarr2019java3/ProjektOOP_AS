@@ -18,28 +18,7 @@ public class JSONUtils {
             e.printStackTrace();
         }
     }
-    public static void printShortWorkerList(String filename){
-        File file = new File(filename);
-        ObjectMapper mapper = new ObjectMapper();
 
-        try {
-            Worker workers[] = mapper.readValue(file, Worker[].class);
-            String a, b, c;
-            for (int x = 0; x< workers.length; x++){
-                a = String.format("%-15s", workers[x].getName());
-                b = String.format("%-15s", workers[x].getSurname());
-                c = String.format("%2d", workers[x].getAge());
-                System.out.println(a+b+c);
-
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
     public static List<Worker> readWorkerList(String filename) {
         File file = new File(filename);
         ObjectMapper mapper = new ObjectMapper();

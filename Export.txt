@@ -1,0 +1,5 @@
+ID IMIĘ             NAZWISKO           PŁEĆ  WIEK        WYDZIAŁ    PENSJA BRUTTO DZIECI  ŻONATY
+0  asd              asd                   M    23     Production          3500,00      1    true
+1  asd              asd                   M    23     Production          3500,00      1    true
+2  asd              asd                   M    23     Production          3500,00      1    true
+3  asd              asd                   M    23     Production          3500,00      1    true

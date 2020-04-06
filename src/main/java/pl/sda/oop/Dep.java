@@ -4,5 +4,6 @@ public enum Dep {
     HR,
     Marketing,
     Production,
+    ;
 
 }
