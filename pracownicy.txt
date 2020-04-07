@@ -1,4 +1,9 @@
 ID IMIĘ             NAZWISKO           PŁEĆ  WIEK        WYDZIAŁ    PENSJA BRUTTO DZIECI  ŻONATY
-0  Adam             Stępień               M    46             HR          6900,00      0   false
-1  dominika         cieślarczyk           K    22      Marketing          4500,00      0   false
-2  Daisy            Dog                   K  2422     Production          2500,00     15   false
+0  Adam             Stępień               M    26             HR          5000,00      0   false
+1  Dominika         Cieślarczyk           K    22             HR          5000,00      1   false
+2  Daisy            Dog                   K    12      Marketing           100,00     99   false
+4  Zbigniew         Wąś                   M    46     Production          3500,00      1    true
+5  Monika           Brodka                K    39      Marketing          4000,00      3    true
+6  Franciszek       Kowalski              M    55     Production          3500,00      2    true
+7  Barbara          Wodzisławska          K    44     Production          3500,00      1   false
+7  Monika           Ziemba                K    44             HR          4500,00      2    true

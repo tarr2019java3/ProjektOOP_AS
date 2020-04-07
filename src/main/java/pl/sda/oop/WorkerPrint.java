@@ -3,29 +3,10 @@ package pl.sda.oop;
 import java.util.List;
 
 public class WorkerPrint {
-    Worker[] workerTable;
-    String filename;
     List<Worker> workerList;
 
     public void setWorkerList(List<Worker> workerList) {
         this.workerList = workerList;
-    }
-
-    public Worker[] getWorkerTable() {
-        return workerTable;
-    }
-
-    public void setWorkerTable(Worker[] workerTable) {
-        this.workerTable = workerTable;
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    void setFilename(String filename) {
-        this.filename = filename;
-        workerTable = JSONUtils.readWorkerList(filename).toArray(new Worker[0]);
     }
 
     public void printFullTitle() {

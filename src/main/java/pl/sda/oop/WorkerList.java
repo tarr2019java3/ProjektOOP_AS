@@ -3,7 +3,6 @@ package pl.sda.oop;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.lang.reflect.MalformedParameterizedTypeException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,13 +21,6 @@ public class WorkerList {
         }
     }
 
-    public int getWorkersIndex() {
-        return workersIndex;
-    }
-
-    public void setWorkersIndex(int workersIndex) {
-        this.workersIndex = workersIndex;
-    }
 
     public List<Worker> getWorkerList() {
         return workerList;
