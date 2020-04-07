@@ -1,1 +1,0 @@
-ID IMIĘ             NAZWISKO           PŁEĆ  WIEK        WYDZIAŁ    PENSJA BRUTTO DZIECI  ŻONATY
