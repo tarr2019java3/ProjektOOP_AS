@@ -1,56 +1,68 @@
 package pl.sda.oop;
 
-import pl.sda.oop.exceptions.EmptyWorkerListException;
-
 import java.io.File;
 import java.util.Scanner;
 
 public class Menu {
     public Menu() {
-        ConsoleMenuUtils cmu = new ConsoleMenuUtils();
+        CreateWorker cmu = new CreateWorker();
         WorkerList wl = new WorkerList();
         WorkerPrint wp = new WorkerPrint();
         File list =  new File("ListaPracownikow.json");
         if (list.exists()){
             wl.setWorkerList(JSONUtils.readWorkerList("ListaPracownikow.json"));
         }
-        wp.setWorkers(wl.getWorkerList());
-        new MainMenuPrint();
+        wp.setWorkerList(wl.getWorkerList());
 
         Scanner scanner = new Scanner(System.in);
+
         while (true) {
+            new MainMenuPrint();
             System.out.print("Wybrana opcja: ");
             int option = scanner.nextInt();
             scanner = new Scanner(System.in);
             switch (option) {
                 case 1:     //wyświetl pracowników
                     wp.printAllWorkersTable();
+                    System.out.println("Naciśnij dowolny klawisz aby wyjść do menu głównego");
+                    scanner.nextLine();
                     break;
                 case 2:                           //dodaj pracownika
                     Worker worker = cmu.createNewWorker();
                     wl.addWorker(worker);
+                    System.out.println("Dodano nowego pracownika!");
+                    scanner.nextLine();
                     break;
                 case 3:                                             //eksport danych do txt
-                    System.out.print("Podaj nazwę pliku: ");
+                    System.out.print("Podaj nazwę pliku:  ");
                     String name = scanner.nextLine();
+                    name = name + ".txt";
                     wl.exportTxt(name);
+                    System.out.println("Dane wyeksportowane do pliku " + name);
+                    scanner.nextLine();
                     break;
                 case 4:
                     System.out.print("Podaj numer id pracownika do usunięcia: ");
                     int index = scanner.nextInt();
                     wl.deleteWorker(index);                            //usuń pracownika
+                    System.out.println("Pracownik usunięty z listy!");
+                    scanner.nextLine();
                     break;
                 case 5:                                               //edycja danych
-                    System.out.println("U którego pracownika chcesz deytować dane?: ");
+                    System.out.println("U którego pracownika chcesz edytować dane?: ");
                     int id = scanner.nextInt();
-                    wl.printFullTitle();
+                    wp.printFullTitle();
                     worker = wl.getWorker(id);
-                    wl.printAllWorker(worker);
+                    wp.printAllWorker(worker);
                     Worker newWorker = cmu.createNewWorker();
                     newWorker.setWorkerId(worker.getWorkerId());
                     wl.setWorker(id, newWorker);
+                    System.out.println("Pomyślnie zmieniono dane!");
+                    scanner.nextLine();
                     break;
                 case 6:                                            //dodatkowe funkcje
+                    new ExtraFunctionsMenuPrint();
+                    wp.printAllWorkersTable(new Sort().quicksortAge(wl.getWorkerList()));
                     break;
                 case 7:
                     break;
@@ -67,6 +79,7 @@ public class Menu {
                     break;
             }
             JSONUtils.writeWorkerList("ListaPracownikow.json", wl.getWorkerList());
+            ClearConsole.clearConsole();
         }
     }
 

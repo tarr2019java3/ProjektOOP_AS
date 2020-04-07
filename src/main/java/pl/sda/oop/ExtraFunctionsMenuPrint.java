@@ -1,9 +1,9 @@
 package pl.sda.oop;
 
-public class MainMenuPrint {
-    public MainMenuPrint() {
+public class ExtraFunctionsMenuPrint {
+    public ExtraFunctionsMenuPrint() {
         System.out.print(String.format("%039d", 0).replace('0', '-'));
-        System.out.print(" MENU GLOWNE ");
+        System.out.print(" DODATKOWE FUNKCJE ");
         System.out.println(String.format("%039d", 0).replace('0', '-'));
         System.out.println(String.format("%58s", "Wybierz jedną z opcji: "));
 

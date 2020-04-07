@@ -2,7 +2,7 @@ package pl.sda.oop;
 
 import java.util.Scanner;
 
-public class ConsoleMenuUtils {
+public class CreateWorker {
 
     public Worker createNewWorker() {
         Worker worker = new Worker();
@@ -98,6 +98,7 @@ public class ConsoleMenuUtils {
         System.out.println("1. " + Dep.HR.toString());
         System.out.println("2. " + Dep.Marketing.toString());
         System.out.println("3. " + Dep.Production.toString());
+
     }
 
 

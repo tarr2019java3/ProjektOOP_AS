@@ -5,10 +5,10 @@ import java.util.List;
 public class WorkerPrint {
     Worker[] workerTable;
     String filename;
-    List<Worker> workers;
+    List<Worker> workerList;
 
-    public void setWorkers(List<Worker> workers) {
-        this.workers = workers;
+    public void setWorkerList(List<Worker> workerList) {
+        this.workerList = workerList;
     }
 
     public Worker[] getWorkerTable() {
@@ -45,13 +45,26 @@ public class WorkerPrint {
     }
 
     public void printAllWorkersTable() {
-        if (workers.isEmpty()) {
+        if (workerList.isEmpty()) {
             System.out.println("Lista jest pusta!");
         } else {
             printFullTitle();
-            for (int x = 0; x < workers.size(); x++) {
+            for (int x = 0; x < workerList.size(); x++) {
 
                 printAllWorker(x);
+            }
+        }
+
+    }
+    public void printAllWorkersTable(List<Worker> list) {
+        if (list.isEmpty()) {
+            System.out.println("Lista jest pusta!");
+        } else
+            {
+            printFullTitle();
+            for (int x = 0; x < list.size(); x++) {
+
+                printAllWorker(list.get(x));
             }
         }
 
@@ -69,12 +82,12 @@ public class WorkerPrint {
     }
 
     public void printShortWorkersTable() {
-        if (workers.isEmpty()) {
+        if (workerList.isEmpty()) {
             System.out.println("Lista jest pusta!");
         } else {
             printShortTitle();
             try {
-                for (int x = 0; x < workers.size(); x++) {
+                for (int x = 0; x < workerList.size(); x++) {
                     printShortWorker(x);
                 }
             } catch (NullPointerException e) {
@@ -95,12 +108,12 @@ public class WorkerPrint {
     }
 
     public void printSpecialWorkersTable() {
-        if (workers.isEmpty()) {
+        if (workerList.isEmpty()) {
             System.out.println("Lista jest pusta!");
         } else {
             printSpecialTitle();
             try {
-                for (int x = 0; x < workers.size(); x++) {
+                for (int x = 0; x < workerList.size(); x++) {
                     printSpecialWorker(x);
                 }
             } catch (NullPointerException e) {
@@ -110,8 +123,8 @@ public class WorkerPrint {
     }
 
     public void printAllWorker(int id) {
-        if (id < workers.size() && id >= 0) {
-            Worker it = workers.get(id);
+        if (id < workerList.size() && id >= 0) {
+            Worker it = workerList.get(id);
             String a, b, c, d, e, f, g, h, i;
             String result = "";
             a = String.format("%-3d", it.getWorkerId());
@@ -150,8 +163,8 @@ public class WorkerPrint {
 
     public void printShortWorker(int id) {
 
-        if (id < workers.size() && id >= 0) {
-            Worker it = workers.get(id);
+        if (id < workerList.size() && id >= 0) {
+            Worker it = workerList.get(id);
             String b, c, g;
             String result = "";
             b = String.format("%-17s", it.getName());
@@ -175,8 +188,8 @@ public class WorkerPrint {
     }
 
     public void printSpecialWorker(int id) {
-        if (id < workers.size() && id >= 0) {
-            Worker it = workers.get(id);
+        if (id < workerList.size() && id >= 0) {
+            Worker it = workerList.get(id);
             String b, c;
             String result = "";
             b = String.format("%-17s", it.getName().toUpperCase());
