@@ -12,11 +12,11 @@ public class MainMenuPrint {
         p2 = "%-40s";
         space = "            ";
         System.out.print(space);
-        System.out.print(String.format(p1, "1. Wyswietl liste pracownikow"));
+        System.out.print(String.format(p1, "1. Wyswietl liste pracowników"));
         System.out.println(String.format(p2, "2. Dodaj pracownika"));
         System.out.print(space);
         System.out.print(String.format(p1, "3. Eksport"));
-        System.out.println(String.format(p2, "4. Usun pracownika"));
+        System.out.println(String.format(p2, "4. Usuń pracownika"));
         System.out.print(space);
         System.out.print(String.format(p1, "5. Edycja danych"));
         System.out.println(String.format(p2, "6. Dodatkowe funkcje"));

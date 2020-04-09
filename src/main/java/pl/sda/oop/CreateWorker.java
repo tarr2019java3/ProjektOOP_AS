@@ -11,23 +11,19 @@ public class CreateWorker {
         System.out.print("Podaj imię: ");
         String name = scanner.nextLine();
         worker.setName(name);
-        System.out.println();
 
-        System.out.println("Podaj nazwisko: ");
+        System.out.print("Podaj nazwisko: ");
         String surname = scanner.nextLine();
         worker.setSurname(surname);
-        System.out.println();
 
-        System.out.println("Podaj wiek: ");
+        System.out.print("Podaj wiek: ");
         int age = scanner.nextInt();
         worker.setAge(age);
-        System.out.println();
 
-
-        viewDepartmentList();
         boolean choice = true;
         while (choice == true) {
-            System.out.println("W jakim wydziale będzie pracować?: ");
+            viewDepartmentList();
+            System.out.print("Podaj numer działu w którym będzie pracować: ");
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
@@ -46,6 +42,7 @@ public class CreateWorker {
                     break;
                 default:
                     System.out.println("Zły Wybór!");
+                    choice = true;
             }
         }
         System.out.print("Podaj wysokość pensji: ");
@@ -53,7 +50,7 @@ public class CreateWorker {
         worker.setSalary(salary);
         System.out.println();
 
-        System.out.print("Podaj plec  K/M: ");
+        System.out.print("Podaj płeć  K/M: ");
         char sex = scanner.next().charAt(0);
             switch (sex) {
                 case 'K':

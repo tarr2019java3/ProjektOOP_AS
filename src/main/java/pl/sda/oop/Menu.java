@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Menu {
     public Menu() {
-        CreateWorker cmu = new CreateWorker();
+        CreateWorker createWorker = new CreateWorker();
         WorkerList wl = new WorkerList();
         WorkerPrint wp = new WorkerPrint();
         File list =  new File("ListaPracownikow.json");
@@ -28,7 +28,7 @@ public class Menu {
                     scanner.nextLine();
                     break;
                 case 2:                           //dodaj pracownika
-                    Worker worker = cmu.createNewWorker();
+                    Worker worker = createWorker.createNewWorker();
                     wl.addWorker(worker);
                     System.out.println("Dodano nowego pracownika!");
                     scanner.nextLine();
@@ -49,20 +49,22 @@ public class Menu {
                     scanner.nextLine();
                     break;
                 case 5:                                               //edycja danych
-                    System.out.println("U którego pracownika chcesz edytować dane?: ");
-                    int id = scanner.nextInt();
-                    wp.printFullTitle();
-                    worker = wl.getWorker(id);
-                    wp.printAllWorker(worker);
-                    Worker newWorker = cmu.createNewWorker();
-                    newWorker.setWorkerId(worker.getWorkerId());
-                    wl.setWorker(id, newWorker);
-                    System.out.println("Pomyślnie zmieniono dane!");
+                    new ChangeWorkerDataMenuPrint();
+                    new ChangeWorkerDataUtilities(wl.getWorkerList());
+//                    System.out.println("U którego pracownika chcesz edytować dane?: ");
+//                    int id = scanner.nextInt();
+//                    wp.printFullTitle();
+//                    worker = wl.getWorker(id);
+//                    wp.printAllWorker(worker);
+//                    Worker newWorker = createWorker.createNewWorker();
+//                    newWorker.setWorkerId(worker.getWorkerId());
+//                    wl.setWorker(id, newWorker);
+//                    System.out.println("Pomyślnie zmieniono dane!");
                     scanner.nextLine();
                     break;
                 case 6:                                            //dodatkowe funkcje
                     new ExtraFunctionsMenuPrint();
-                    wp.printAllWorkersTable(new Sort().quicksortAge(wl.getWorkerList()));
+                    new ExtraFunctionsUtilities(wl.getWorkerList());
                     break;
                 case 7:
                     break;
